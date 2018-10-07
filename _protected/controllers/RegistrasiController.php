@@ -52,6 +52,25 @@ class RegistrasiController extends Controller
         ]);
     }
 
+    public function actionLihatsemua()
+    {
+        $searchModel = new RefPegawaiPenilaianSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $model = new RefPegawaiPenilaian();
+        $model->dinilai = Yii::$app->params['dinilai'];
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return 1;
+        }
+
+        return $this->render('lihatsemua', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'model' => $model,
+        ]);
+    }    
+
     /**
      * Displays a single RefPegawaiPenilaian model.
      * @param integer $id
