@@ -67,5 +67,10 @@ class RefPegawaiPenilaian extends \yii\db\ActiveRecord
         return [
             TimestampBehavior::class,
         ];
-    }    
+    }
+
+    public function getNamaUnit()
+    {
+        return Yii::$app->params['unit'][$this->unit];
+    }
 }

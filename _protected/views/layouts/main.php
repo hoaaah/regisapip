@@ -84,7 +84,7 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; <?= Yii::t('app', Yii::$app->name) ?> <?= date('Y') ?></p>
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">Developed by <?= Html::a("@hoaaah", 'https://belajararief.com', ['class' => 'btn btn-xs btn-info']) ?> <?= Yii::powered() ?></p>
     </div>
 </footer>
 

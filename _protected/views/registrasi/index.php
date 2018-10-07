@@ -27,13 +27,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'responsive'=>true,
         'hover'=>true,     
         'resizableColumns'=>true,
-        'panel'=>['type'=>'primary', 'heading'=>$this->title],
+        'panel'=>[
+            'type'=>'primary', 
+            'heading'=>$this->title,
+        ],
         'responsiveWrap' => false,        
         'toolbar' => [
             [
                 // 'content' => $this->render('_search', ['model' => $searchModel]),
             ],
+            '{export}',
+            // '{toggleData}',
         ],       
+        'toggleDataContainer' => ['class' => 'btn-group-sm'],
+        'exportContainer' => ['class' => 'btn-group-sm'],
         'pager' => [
             'firstPageLabel' => 'Awal',
             'lastPageLabel'  => 'Akhir'
@@ -45,12 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
         // 'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'kartik\grid\SerialColumn'],
-
-            'id',
             'nip',
             'nama',
             'jabatan',
-            'unit',
+            'namaUnit',
             //'email:email',
             //'telepon',
             //'created_at',
